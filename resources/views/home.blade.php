@@ -4,10 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{ config('app.name', 'Medison   Care') }}</title>
+    <title>{{ config('app.name', 'Medison Care') }}</title>
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
-
 </head>
 <body class="antialiased">
 
@@ -95,7 +94,7 @@
   <!-- supported brand-->
   <section class= "py-5 bg-white">
     <div class = "container bg-white">
-        <h3 class = "mb-5" >Sponsor By</h3>
+        <h3 class = "mb-5" > Our Partnership</h3>
             <div class = "d-flex justify-content-center flex-wrap gap-4">
                 <div class ="sponsor-item">
                     <img src="photo/YouTube - Apps on Google Play.jpg" alt="https://www.youtube.com/" width=100>

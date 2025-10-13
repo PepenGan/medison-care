@@ -3,9 +3,18 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('views/home', function () {
     return view('home');
+});
+Route::get('views/login', function () {
+    return view('login');
+});
+Route::get('views/register', function () {
+    return view('register');
+});
+Route::get('views/forgot', function () {
+    return view('forgot');
 });
