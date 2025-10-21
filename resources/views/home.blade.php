@@ -18,21 +18,40 @@
   <!-- Frame 9:16 - styling ada di resources/css/style.css -->
   <div class="aspect-9-16" style="--frame: 520px;">
 
-    <!-- WRAPPER supaya konten ada padding dalam frame -->
-    <div class="px-4 pb-6">
+    <!-- Bar atas: Search + Cart (side-by-side) -->
+<div class="mt-4 flex items-center gap-3">
 
-      <!-- 🔍 Search bar -->
-      <form action="#" method="GET" class="hidden md:flex items-center bg-white rounded-full px-3 py-1.5 w-full max-w-sm shadow-sm mt-4 mx-auto">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-gray-400">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1116.65 16.65z" />
-        </svg>
-        <input
-          type="text"
-          name="search"
-          placeholder="Search..."
-          class="ml-2 w-full text-gray-700 bg-transparent outline-none placeholder-gray-400 text-sm"
-        />
-      </form>
+  <!-- 🔍 Search bar -->
+  <form action="#" method="GET"
+        class="flex items-center bg-white rounded-full px-3 py-1.5 w-full flex-1 shadow-sm">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+         stroke-width="2" stroke="currentColor" class="w-5 h-5 text-gray-400">
+      <path stroke-linecap="round" stroke-linejoin="round"
+            d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1116.65 16.65z" />
+    </svg>
+    <input type="text" name="search" placeholder="Search..."
+           class="ml-2 w-full text-gray-700 bg-transparent outline-none placeholder-gray-400 text-sm" />
+  </form>
+
+  <!-- 🛒 Cart badge (klik-able) -->
+  <a href="/cart" aria-label="Buka keranjang"
+     class="relative inline-grid place-items-center w-12 h-12 shrink-0
+            rounded-lg
+            bg-[radial-gradient(theme(colors.green.500)_2px,transparent_2px)]
+            focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500/70 transition">
+    <span class="grid place-items-center size-10 bg-white rounded-full
+                 ring-1 ring-black/5 shadow-[0_6px_16px_rgba(0,0,0,0.15)]
+                 hover:shadow-[0_8px_20px_rgba(0,0,0,0.18)] transition">
+      <svg viewBox="0 0 24 24" class="w-6 h-6 text-green-700 fill-current">
+        <path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM3 4h2l3.6 7.59a2 2 0 0 0 1.8 1.16H17a2 2 0 0 0 1.94-1.52l1.38-5.52A1 1 0 0 0 19.35 4H6.21l-.94-2H3z"/>
+      </svg>
+    </span>
+  </a>
+
+</div>
+
+
+
 
       <!-- 🖼️ Slider Container -->
       <div class="relative w-full overflow-hidden rounded-2xl shadow-2xl mt-4">
