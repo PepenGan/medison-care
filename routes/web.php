@@ -18,3 +18,6 @@ Route::get('views/register', function () {
 Route::get('views/forgot', function () {
     return view('forgot');
 });
+Route::get('/profile', function () {
+    return view('profile');
+});
