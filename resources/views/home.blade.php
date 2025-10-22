@@ -2,10 +2,6 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
 
-    <title>{{ config('app.name', 'Medison Care') }}</title>
-    @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,14 +10,18 @@
 
 </head>
 
-<body class="antialiased ">
-  <!-- Frame 9:16 - styling ada di resources/css/style.css -->
-  <div class="aspect-9-16" style="--frame: 520px;">
+<body class="antialiased aspect-9-16 "
+  style="--frame: 520px;">
 
-    <!-- Bar atas: Search + Cart (side-by-side) -->
+  <header>
+
+    <div class="w-[100px]">
+      <img src="photo/logo.png" alt="">
+    </div>
+
 <div class="mt-4 flex items-center gap-3">
 
-      <div class="flex justify-center mt-3 ml-[50px]  ">
+      <div class="flex justify-center mt-[-130px] ml-[130px]  ">
   <form
     action="#"
     method="GET"
@@ -60,35 +60,23 @@
   </form>
 </div>
 
-      {{-- <div class="">
+      <div class="mt-[-130px] ml-[-10px]">
         <a href="/views/order">
           <img src="photo/keranjang.png" alt="" class="w-[50px]">
         </a>
-      </div> --}}
- 
+      </div>
 
-  <!-- 🛒 Cart badge (klik-able) -->
-  <a href="/cart" aria-label="Buka keranjang"
-     class="relative inline-grid place-items-center w-12 h-12 shrink-0
-            rounded-lg
-            bg-[radial-gradient(theme(colors.green.500)_2px,transparent_2px)]
-            focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500/70 transition">
-    <span class="grid place-items-center size-10 bg-white rounded-full
-                 ring-1 ring-black/5 shadow-[0_6px_16px_rgba(0,0,0,0.15)]
-                 hover:shadow-[0_8px_20px_rgba(0,0,0,0.18)] transition">
-      <svg viewBox="0 0 24 24" class="w-6 h-6 text-green-700 fill-current">
-        <path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM3 4h2l3.6 7.59a2 2 0 0 0 1.8 1.16H17a2 2 0 0 0 1.94-1.52l1.38-5.52A1 1 0 0 0 19.35 4H6.21l-.94-2H3z"/>
-      </svg>
-    </span>
-  </a>
+      <div class="w-[22px] mt-[-127
+      px] ml-[-10px]">
+        <a href="">
+           <img src="photo/user.png" alt="">
+        </a>
+      </div>
 
 </div>
-
-
-
-
+  </header>
       <!-- 🖼️ Slider Container -->
-      <div class="relative w-full overflow-hidden rounded-2xl shadow-2xl mt-4">
+      <div class="relative w-full overflow-hidden rounded-2xl shadow-2xl mt-[100px]">
         <!-- Tips: jika nanti pakai slider JS, tambahkan width dinamis per slide -->
         <div class="slides flex transition-transform duration-700">
           <img
