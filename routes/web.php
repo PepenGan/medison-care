@@ -21,3 +21,10 @@ Route::get('views/forgot', function () {
 Route::get('/profile', function () {
     return view('profile');
 });
+Route::get('views/metodepayment', function () {
+    return view('metodepayment');
+});
+Route::get('views/order', function () {
+    return view('order');
+});
+

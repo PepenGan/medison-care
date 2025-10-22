@@ -14,24 +14,58 @@
 
 </head>
 
-<body class="antialiased">
+<body class="antialiased ">
   <!-- Frame 9:16 - styling ada di resources/css/style.css -->
   <div class="aspect-9-16" style="--frame: 520px;">
 
     <!-- Bar atas: Search + Cart (side-by-side) -->
 <div class="mt-4 flex items-center gap-3">
 
-  <!-- 🔍 Search bar -->
-  <form action="#" method="GET"
-        class="flex items-center bg-white rounded-full px-3 py-1.5 w-full flex-1 shadow-sm">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-         stroke-width="2" stroke="currentColor" class="w-5 h-5 text-gray-400">
-      <path stroke-linecap="round" stroke-linejoin="round"
-            d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1116.65 16.65z" />
+      <div class="flex justify-center mt-3 ml-[50px]  ">
+  <form
+    action="#"
+    method="GET"
+    class="hidden md:flex items-center gap-2 bg-[#f9fafb] border border-gray-300 rounded-full px-4 py-1.5 w-full max-w-[380px] shadow-sm focus-within:ring-2 focus-within:ring-gray-200 transition-all duration-300"
+  >
+    <!-- Ikon Search -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="w-4 h-4 text-gray-500"
+    >
+      <circle cx="11" cy="11" r="7" />
+      <line x1="21" y1="21" x2="16.65" y2="16.65" />
     </svg>
-    <input type="text" name="search" placeholder="Search..."
-           class="ml-2 w-full text-gray-700 bg-transparent outline-none placeholder-gray-400 text-sm" />
+
+    <!-- Input -->
+    <input
+      type="text"
+      name="search"
+      placeholder="Search anything..."
+      class="flex-1 bg-transparent text-gray-700 placeholder-gray-400 text-[14px] focus:outline-none"
+    />
+
+    <!-- Tombol -->
+    <button
+      type="submit"
+      class="px-3 py-1 text-sm font-medium text-gray-600 bg-white border border-gray-300 rounded-full hover:bg-gray-100 transition-colors duration-300"
+    >
+      Go
+    </button>
   </form>
+</div>
+
+      {{-- <div class="">
+        <a href="/views/order">
+          <img src="photo/keranjang.png" alt="" class="w-[50px]">
+        </a>
+      </div> --}}
+ 
 
   <!-- 🛒 Cart badge (klik-able) -->
   <a href="/cart" aria-label="Buka keranjang"
