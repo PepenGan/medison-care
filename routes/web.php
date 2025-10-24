@@ -18,10 +18,12 @@ Route::get('views/register', function () {
 Route::get('views/forgot', function () {
     return view('forgot');
 });
+Route::get('/profile', function () {
+    return view('profile');
+});
 Route::get('views/metodepayment', function () {
     return view('metodepayment');
 });
-
 Route::get('views/order', function () {
     return view('order');
 });
