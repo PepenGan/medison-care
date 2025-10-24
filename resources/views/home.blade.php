@@ -14,14 +14,18 @@
 
 </head>
 
-<body class="antialiased ">
-  <!-- Frame 9:16 - styling ada di resources/css/style.css -->
-  <div class="aspect-9-16" style="--frame: 520px;">
+<body class="antialiased aspect-9-16  font-[inter]"
+  style="--frame: 520px;">
 
-    <!-- Bar atas: Search + Cart (side-by-side) -->
+  <header>
+
+    <div class="w-[100px]">
+      <img src="photo/logo.png" alt="">
+    </div>
+
 <div class="mt-4 flex items-center gap-3">
 
-      <div class="flex justify-center mt-3 ml-[50px]  ">
+      <div class="flex justify-center mt-[-130px] ml-[130px]  ">
   <form
     action="#"
     method="GET"
@@ -60,35 +64,24 @@
   </form>
 </div>
 
-      {{-- <div class="">
+      <div class="mt-[-130px] ml-[-10px]">
         <a href="/views/order">
           <img src="photo/keranjang.png" alt="" class="w-[50px]">
         </a>
-      </div> --}}
- 
+      </div>
 
-  <!-- 🛒 Cart badge (klik-able) -->
-  <a href="/cart" aria-label="Buka keranjang"
-     class="relative inline-grid place-items-center w-12 h-12 shrink-0
-            rounded-lg
-            bg-[radial-gradient(theme(colors.green.500)_2px,transparent_2px)]
-            focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500/70 transition">
-    <span class="grid place-items-center size-10 bg-white rounded-full
-                 ring-1 ring-black/5 shadow-[0_6px_16px_rgba(0,0,0,0.15)]
-                 hover:shadow-[0_8px_20px_rgba(0,0,0,0.18)] transition">
-      <svg viewBox="0 0 24 24" class="w-6 h-6 text-green-700 fill-current">
-        <path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM3 4h2l3.6 7.59a2 2 0 0 0 1.8 1.16H17a2 2 0 0 0 1.94-1.52l1.38-5.52A1 1 0 0 0 19.35 4H6.21l-.94-2H3z"/>
-      </svg>
-    </span>
-  </a>
+      <div class="w-[22px] mt-[-127px] ml-[-10px]">
+        <a href="">
+           <img src="photo/user.png" alt="">
+        </a>
+      </div>
 
 </div>
-
-
+  </header>
 
 
       <!-- 🖼️ Slider Container -->
-      <div class="relative w-full overflow-hidden rounded-2xl shadow-2xl mt-4">
+      <div class="relative w-full overflow-hidden rounded-2xl shadow-2xl mt-[-10px]">
         <!-- Tips: jika nanti pakai slider JS, tambahkan width dinamis per slide -->
         <div class="slides flex transition-transform duration-700">
           <img
@@ -194,108 +187,101 @@
   </div>
 </section>
 
+<section>
+    <div>
+      <img src="photo/banner3.png" alt="" class=" w-[400px] h-[250px] rounded-xl ml-[60px] mt-[20px]">
+    </div>
+</section>
 
-<!-- PROMO -->
-<section class="mt-6">
-  <div class="flex items-center justify-between mb-3 px-2">
-    <h2 class="text-lg font-semibold text-gray-800">Promo</h2>
-    <a href="#semua-promo" class="text-sm text-green-600 hover:underline font-medium">lihat semua &gt;</a>
+
+<!-- PROMO SECTION -->
+<section class="mt-6 font-[inter]">
+  <div class="flex items-center justify-between mb-3 px-3">
+    <h2 class="text-[17px] font-semibold text-gray-800">Promo</h2>
+    <a href="#semua-promo" class="text-[13px] text-green-600 hover:underline font-medium">
+      lihat semua &gt;
+    </a>
   </div>
 
-  <!-- List horizontal -->
-  <div class="overflow-x-auto snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] px-1">
-    <div class="flex gap-4 min-w-max [ &>* ]:snap-start">
+  <!-- SCROLL LIST -->
+  <div class="overflow-x-auto snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] px-2">
+    <div class="flex gap-3 min-w-max [ &>* ]:snap-start pb-1">
 
       <!-- CARD -->
-      <article class="relative w-56 bg-white rounded-xl border border-green-400 shadow-md hover:shadow-lg transition overflow-hidden">
-        <!-- Badge PROMO (centered, attached to top border) -->
+      <article class="relative w-40 bg-white rounded-xl border border-green-300 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+        <!-- Badge PROMO -->
         <div class="absolute top-0 left-0 w-full flex justify-center pointer-events-none">
-          <span class="inline-block bg-[#C6A252] text-white text-[11px] font-semibold px-3 py-1 rounded-b-md shadow-sm uppercase tracking-wide">
+          <span class="inline-block bg-[#C6A252] text-white text-[10px] font-semibold px-2 py-1 rounded-b-md shadow-sm uppercase tracking-wide">
             Promo
           </span>
         </div>
 
-        <!-- Konten: tambah padding-top agar tidak ketimpa badge -->
-        <div class="p-3 pt-5">
-          <!-- Status dot -->
-          <div class="flex items-center gap-2 mb-2">
-            <span class="inline-block w-3 h-3 rounded-full bg-lime-500 shadow"></span>
-          </div>
-
+        <div class="p-2 pt-5">
           <!-- Gambar -->
-          <div class="h-28 flex items-center justify-center mb-2">
-            <img src="/photo/obat.webp" alt="Tempra Anggur Sirup 60ml" class="max-h-24 object-contain">
+          <div class="h-20 flex items-center justify-center mb-2">
+            <img src="/photo/obat.webp" alt="Tempra Anggur Sirup 60ml" class="max-h-16 object-contain">
           </div>
 
           <!-- Judul -->
-          <h3 class="text-sm font-semibold text-gray-900 text-center leading-tight uppercase">
+          <h3 class="text-[11px] font-semibold text-gray-900 text-center leading-snug uppercase">
             TEMPRA ANGGUR<br>SIRUP 60ML
           </h3>
 
           <!-- Harga -->
-          <div class="mt-2 text-center">
-            <div class="text-[12px] text-red-500 line-through">Rp 54.021</div>
-            <div class="text-green-600 font-extrabold">
-              Rp 49.699,- <span class="text-gray-600 font-semibold">/ Botol</span>
+          <div class="mt-1 text-center">
+            <div class="text-[10px] text-red-500 line-through">Rp 54.021</div>
+            <div class="text-[12px] text-green-600 font-extrabold">
+              Rp 49.699,- <span class="text-gray-600 font-medium text-[10px]">/ Botol</span>
             </div>
-            <div class="text-[11px] text-gray-500 mt-1">13.4 RB+ Terjual</div>
+            <div class="text-[10px] text-gray-500 mt-[2px]">13.4 RB+ Terjual</div>
           </div>
         </div>
       </article>
 
-
       <!-- CARD 2 -->
-      <article class="relative w-56 bg-white rounded-xl border border-green-400 shadow-md hover:shadow-lg transition overflow-hidden">
-      <!-- Badge PROMO (centered, attached to top border) -->
-      <div class="absolute top-0 left-0 w-full flex justify-center pointer-events-none">
-        <span class="inline-block bg-[#C6A252] text-white text-[11px] font-semibold px-3 py-1 rounded-b-md shadow-sm uppercase tracking-wide">
-          Promo
-        </span>
-      </div>
-        <div class="p-3 pt-5">
-          <div class="flex items-center gap-2 mb-2">
-            <span class="inline-block w-3 h-3 rounded-full bg-lime-500 shadow"></span>
+      <article class="relative w-40 bg-white rounded-xl border border-green-300 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full flex justify-center pointer-events-none">
+          <span class="inline-block bg-[#C6A252] text-white text-[10px] font-semibold px-2 py-1 rounded-b-md shadow-sm uppercase tracking-wide">
+            Promo
+          </span>
+        </div>
+        <div class="p-2 pt-5">
+          <div class="h-20 flex items-center justify-center mb-2">
+            <img src="/photo/obat.webp" alt="Lacto B Sachet" class="max-h-16 object-contain">
           </div>
-          <div class="h-28 flex items-center justify-center mb-2">
-            <img src="/photo/obat.webp" alt="Lacto B Sachet" class="max-h-24 object-contain">
-          </div>
-          <h3 class="text-sm font-semibold text-gray-900 text-center leading-tight uppercase">
+          <h3 class="text-[11px] font-semibold text-gray-900 text-center leading-snug uppercase">
             LACTO B SACHET
           </h3>
-          <div class="mt-2 text-center">
-            <div class="text-[12px] text-red-500 line-through">Rp 10.450</div>
-            <div class="text-green-600 font-extrabold">
-              Rp 9.935,- <span class="text-gray-600 font-semibold">/ Pcs</span>
+          <div class="mt-1 text-center">
+            <div class="text-[10px] text-red-500 line-through">Rp 10.450</div>
+            <div class="text-[12px] text-green-600 font-extrabold">
+              Rp 9.935,- <span class="text-gray-600 font-medium text-[10px]">/ Pcs</span>
             </div>
-            <div class="text-[11px] text-gray-500 mt-1">73.2 RB+ Terjual</div>
+            <div class="text-[10px] text-gray-500 mt-[2px]">73.2 RB+ Terjual</div>
           </div>
         </div>
       </article>
 
       <!-- CARD 3 -->
-      <article class="relative w-56 bg-white rounded-xl border border-green-400 shadow-md hover:shadow-lg transition overflow-hidden">
-      <!-- Badge PROMO (centered, attached to top border) -->
-      <div class="absolute top-0 left-0 w-full flex justify-center pointer-events-none">
-        <span class="inline-block bg-[#C6A252] text-white text-[11px] font-semibold px-3 py-1 rounded-b-md shadow-sm uppercase tracking-wide">
-          Promo
-        </span>
-      </div>
-        <div class="p-3">
-          <div class="flex items-center gap-2 mb-2">
-            <span class="inline-block w-3 h-3 rounded-full bg-lime-500 shadow"></span>
+      <article class="relative w-40 bg-white rounded-xl border border-green-300 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full flex justify-center pointer-events-none">
+          <span class="inline-block bg-[#C6A252] text-white text-[10px] font-semibold px-2 py-1 rounded-b-md shadow-sm uppercase tracking-wide">
+            Promo
+          </span>
+        </div>
+        <div class="p-2 pt-5">
+          <div class="h-20 flex items-center justify-center mb-2">
+            <img src="/photo/obat.webp" alt="Tolak Angin Cair Plus Madu 15ml" class="max-h-16 object-contain">
           </div>
-          <div class="h-28 flex items-center justify-center mb-2">
-            <img src="/photo/obat.webp" alt="Tolak Angin Cair Plus Madu 15ml" class="max-h-24 object-contain">
-          </div>
-          <h3 class="text-sm font-semibold text-gray-900 text-center leading-tight uppercase">
-            TOLAK ANGIN CAIR<br>PLUS MADU 15ML
+          <h3 class="text-[11px] font-semibold text-gray-900 text-center leading-snug uppercase">
+            TOLAK ANGIN<br>PLUS MADU 15ML
           </h3>
-          <div class="mt-2 text-center">
-            <div class="text-[12px] text-red-500 line-through">Rp 55.592</div>
-            <div class="text-green-600 font-extrabold">
-              Rp 52.811,- <span class="text-gray-600 font-semibold">/ Dos</span>
+          <div class="mt-1 text-center">
+            <div class="text-[10px] text-red-500 line-through">Rp 55.592</div>
+            <div class="text-[12px] text-green-600 font-extrabold">
+              Rp 52.811,- <span class="text-gray-600 font-medium text-[10px]">/ Dos</span>
             </div>
-            <div class="text-[11px] text-gray-500 mt-1">10 RB+ Terjual</div>
+            <div class="text-[10px] text-gray-500 mt-[2px]">10 RB+ Terjual</div>
           </div>
         </div>
       </article>
@@ -305,85 +291,136 @@
 </section>
 
 
-      <!-- 🤝 Supported brand -->
-      <section class="py-5 bg-white mt-4 rounded-2xl shadow">
-        <div class="mx-auto max-w-md">
-          <h3 class="mb-5 text-center text-lg font-semibold text-gray-700">Sponsored By</h3>
 
-          <div class="grid grid-cols-3 sm:grid-cols-5 gap-4 place-items-center">
-            <div class="sponsor-item text-center">
-              <img src="photo/YouTube - Apps on Google Play.jpg" alt="YouTube" width="80" class="mx-auto">
-              <p class="mt-1 text-xs text-gray-600">YouTube</p>
-            </div>
-            <div class="sponsor-item text-center">
-              <img src="photo/Google_Favicon_2025.svg-removebg-preview.png" alt="Google" width="80" class="mx-auto">
-              <p class="mt-1 text-xs text-gray-600">Google</p>
-            </div>
-            <div class="sponsor-item text-center">
-              <img src="photo/Pin by Leticia Rossi M de Lima on Apps personagens _ App logo, App, Iphone background.jpg" alt="Gmail" width="80" class="mx-auto">
-              <p class="mt-1 text-xs text-gray-600">Gmail</p>
-            </div>
-            <div class="sponsor-item text-center">
-              <img src="photo/༄ 🄵🄰🄲🄴🄱🄾🄾🄺 🄸🄲🄾🄽 ༄.jpg" alt="Facebook" width="80" class="mx-auto">
-              <p class="mt-1 text-xs text-gray-600">Facebook</p>
-            </div>
-            <div class="sponsor-item text-center">
-              <img src="photo/Download premium png of LinkedIn png social media icon_ 7 JUNE 2021 - BANGKOK, THAILAND about png, transparent png, linkedin in icon, instagram highlight cover, and sticker 3344833.jpg" alt="LinkedIn" width="80" class="mx-auto">
-              <p class="mt-1 text-xs text-gray-600">LinkedIn</p>
-            </div>
-          </div>
+      <!-- 🤝 Supported brand -->
+   <section class="font-[inter] mt-[40px] mb-[40px]">
+  <div class="text-center">
+    <!-- Judul -->
+    <p class="font-bold text-[26px] text-gray-800 mb-6 tracking-wide">
+      Our Supported Brands
+    </p>
+
+    <!-- Container Brand Logo -->
+    <div class="flex flex-wrap justify-center gap-6">
+      <!-- Brand 1 -->
+      <div class="bg-gradient-to-b from-white to-[#f4f7f4] p-4 rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:scale-105">
+        <img src="photo/brand.png" alt="Brand 1" class="w-[90px] h-auto object-contain">
+      </div>
+
+      <!-- Brand 2 -->
+      <div class="bg-gradient-to-b from-white to-[#f4f7f4] p-4 rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:scale-105">
+        <img src="photo/brand.png" alt="Brand 2" class="w-[90px] h-auto object-contain">
+      </div>
+
+      <!-- Brand 3 -->
+      <div class="bg-gradient-to-b from-white to-[#f4f7f4] p-4 rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:scale-105">
+        <img src="photo/brand.png" alt="Brand 3" class="w-[90px] h-auto object-contain">
+      </div>
+
+      <!-- Brand 4 -->
+      <div class="bg-gradient-to-b from-white to-[#f4f7f4] p-4 rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:scale-105">
+        <img src="photo/brand.png" alt="Brand 4" class="w-[90px] h-auto object-contain">
+      </div>
+
+      <!-- Brand 5 -->
+      <div class="bg-gradient-to-b from-white to-[#f4f7f4] p-4 rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:scale-105">
+        <img src="photo/brand.png" alt="Brand 5" class="w-[90px] h-auto object-contain">
+      </div>
+
+      <!-- Brand 6 -->
+      <div class="bg-gradient-to-b from-white to-[#f4f7f4] p-4 rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:scale-105">
+        <img src="photo/brand.png" alt="Brand 6" class="w-[90px] h-auto object-contain">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <section class="font-[inter] mt-[50px] mb-[50px]">
+  <div class="text-center ml-[-300px]">
+    <!-- Judul -->
+    <p class="font-bold text-[24px] text-gray-800 mb-8 tracking-wide ml-[280px]">What’s New</p>
+
+    <!-- Container Card -->
+    <div class="flex justify-center">
+      <div class="bg-white border border-gray-100 rounded-2xl shadow-md w-[140px] h-[200px] flex flex-col transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
+        
+        <!-- Gambar -->
+        <div class="p-2">
+          <img src="photo/atit.jpeg" alt="Artikel" 
+               class="rounded-xl w-full h-[80px] object-cover shadow-sm">
         </div>
-      </section>
+
+        <!-- Isi -->
+        <div class="px-3 text-left flex-1">
+          <h3 class="font-semibold text-[12px] text-[#166534] mb-0.5">How To Be a Good Patient</h3>
+          <p class="text-[10px] text-gray-600 leading-tight">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, consequuntur.
+          </p>
+        </div>
+
+        <!-- Tombol -->
+        <div class="bg-gradient-to-r from-[#65a30d] to-[#4d7c0f] py-1.5 mt-2 text-white text-[11px] font-semibold rounded-b-2xl hover:opacity-90 transition">
+          Read More
+        </div>
+      </div>
+    </div>
+
+    <div class="flex justify-center ml-[300px] mt-[-200px]">
+      <div class="bg-white border border-gray-100 rounded-2xl shadow-md w-[140px] h-[200px] flex flex-col transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
+        
+        <!-- Gambar -->
+        <div class="p-2">
+          <img src="photo/atit.jpeg" alt="Artikel" 
+               class="rounded-xl w-full h-[80px] object-cover shadow-sm">
+        </div>
+
+        <!-- Isi -->
+        <div class="px-3 text-left flex-1">
+          <h3 class="font-semibold text-[12px] text-[#166534] mb-0.5">How To Be a Good Patient</h3>
+          <p class="text-[10px] text-gray-600 leading-tight">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, consequuntur.
+          </p>
+        </div>
+
+        <!-- Tombol -->
+        <div class="bg-gradient-to-r from-[#65a30d] to-[#4d7c0f] py-1.5 mt-2 text-white text-[11px] font-semibold rounded-b-2xl hover:opacity-90 transition">
+          Read More
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="flex justify-center ml-[600px] mt-[-200px]">
+      <div class="bg-white border border-gray-100 rounded-2xl shadow-md w-[140px] h-[200px] flex flex-col transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
+        
+        <!-- Gambar -->
+        <div class="p-2">
+          <img src="photo/atit.jpeg" alt="Artikel" 
+               class="rounded-xl w-full h-[80px] object-cover shadow-sm">
+        </div>
+
+        <!-- Isi -->
+        <div class="px-3 text-left flex-1">
+          <h3 class="font-semibold text-[12px] text-[#166534] mb-0.5">How To Be a Good Patient</h3>
+          <p class="text-[10px] text-gray-600 leading-tight">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, consequuntur.
+          </p>
+        </div>
+
+        <!-- Tombol -->
+        <div class="bg-gradient-to-r from-[#65a30d] to-[#4d7c0f] py-1.5 mt-2 text-white text-[11px] font-semibold rounded-b-2xl hover:opacity-90 transition">
+          Read More
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
       <!-- ⚙️ Footer -->
       <footer class="bg-[#85A35E] text-white mt-6 rounded-2xl overflow-hidden">
-        <div class="px-6 py-8 grid grid-cols-1 md:grid-cols-4 gap-6">
-
-          <!-- Brand -->
-          <div>
-            <h2 class="text-2xl font-bold text-white">Insyst</h2>
-          </div>
-
-          <!-- Navigation -->
-          <div>
-            <h3 class="text-lg font-semibold mb-3">Navigation</h3>
-            <ul class="space-y-2 text-sm">
-              <li><a href="#" class="hover:text-cyan-200">Test</a></li>
-              <li><a href="#" class="hover:text-cyan-200">Career</a></li>
-              <li><a href="#" class="hover:text-cyan-200">About Us</a></li>
-              <li><a href="#" class="hover:text-cyan-200">Contact Us</a></li>
-            </ul>
-          </div>
-
-          <!-- Resources -->
-          <div>
-            <h3 class="text-lg font-semibold mb-3">Resources</h3>
-            <ul class="space-y-2 text-sm">
-              <li><a href="#" class="hover:text-cyan-200">Blogs</a></li>
-              <li><a href="#" class="hover:text-cyan-200">News &amp; Update</a></li>
-              <li><a href="#" class="hover:text-cyan-200">Career</a></li>
-            </ul>
-          </div>
-
-          <!-- Stay up to date -->
-          <div>
-            <h3 class="text-lg font-semibold mb-3">Stay up to date</h3>
-            <p class="text-sm mb-4 opacity-90">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-            </p>
-            <form class="flex">
-              <input
-                type="email"
-                placeholder="Your Email Address"
-                class="w-full px-3 py-2 text-sm border rounded-l-lg focus:outline-none focus:ring-2 focus:ring-cyan-300 text-gray-900"
-              >
-              <button type="submit" class="px-4 bg-gradient-to-r from-cyan-400 to-green-400 text-white rounded-r-lg hover:opacity-90 transition">
-                Subscribe
-              </button>
-            </form>
-          </div>
-
-        </div>
 
         <!-- Bottom -->
         <div class="border-t border-white/20 py-3 text-center text-xs">
