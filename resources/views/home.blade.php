@@ -417,7 +417,71 @@
 
   </div>
 </section>
+<section>
+  <div class="fixed bottom-6 right-6 z-50">
+    <!-- Tombol Chat WhatsApp -->
+    <button id="chatButton"
+      class="bg-green-500 w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 hover:scale-110 transition-all duration-300">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-6 h-6">
+    </button>
 
+    <!-- Popup Chat -->
+    <div id="chatPopup"
+      class="hidden absolute bottom-20 right-2 w-[300px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden animate-fade-in">
+      
+      <!-- Header -->
+      <div class="flex items-center gap-3 p-4 bg-green-500 text-white rounded-t-2xl">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA"
+          class="w- h-8 bg-white rounded-full p-1">
+        <div>
+          <p class="font-semibold text-sm leading-tight">Medison Care Support</p>
+          <p class="text-xs opacity-90">Online • Usually replies within minutes</p>
+        </div>
+      </div>
+
+      <!-- Isi Pesan -->
+      <div class="p-4 text-gray-700 text-sm bg-gray-50">
+        <div class="mb-3 bg-white p-3 rounded-lg shadow-sm border border-gray-100">
+          👋 Halo! Ada yang bisa kami bantu hari ini?
+        </div>
+        <a href="https://wa.me/6281234567890" target="_blank"
+          class="flex items-center justify-center gap-2 bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition font-medium text-sm shadow-md hover:shadow-lg">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" class="w-4 h-4">
+          Chat via WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANIMASI & SCRIPT -->
+<style>
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fadeInUp 0.3s ease forwards;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById('chatButton');
+    const popup = document.getElementById('chatPopup');
+
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      popup.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!btn.contains(e.target) && !popup.contains(e.target)) {
+        popup.classList.add('hidden');
+      }
+    });
+  });
+</script>
 
       <!-- ⚙️ Footer -->
       <footer class="bg-[#85A35E] text-white mt-6 rounded-2xl overflow-hidden">
