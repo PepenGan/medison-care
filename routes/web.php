@@ -30,3 +30,7 @@ Route::get('views/order', function () {
 Route::get('views/search', function () {
     return view('search');
 });
+Route::get('views/beranda', function () {
+    return view('beranda');
+}); 
+
