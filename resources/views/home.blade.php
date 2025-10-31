@@ -10,7 +10,7 @@
 
 </head>
 
-<body class="antialiased aspect-9-16  font-[inter]"
+<body class="antialiased aspect-9-16 "
   style="--frame: 520px;">
 
   <header>
@@ -74,8 +74,6 @@
 
 </div>
   </header>
-
-
       <!-- 🖼️ Slider Container -->
       <div class="relative w-full overflow-hidden rounded-2xl shadow-2xl mt-[-10px]">
         <!-- Tips: jika nanti pakai slider JS, tambahkan width dinamis per slide -->
