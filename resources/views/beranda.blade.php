@@ -213,7 +213,7 @@
                         nama: 'Intolerant Laktosa',
                         kategoris: ['Intolerant Laktosa', 'Tinggi Kalori'],
                         price: '250.000',
-                        image_url: 'https://placehold.co/300x200/ffe5e5/ff0000?text=Menu+1',
+                        image_url: "{{ asset('photo/susu.jpeg') }}",
                         start_time: '07.00 - 07.30',
                         end_time: '08.00 - 08.30'
                     },
@@ -222,7 +222,7 @@
                         nama: 'Tinggi Kalori',
                         kategoris: ['Tinggi Kalori'],
                         price: '350.000',
-                        image_url: 'https://placehold.co/300x200/e0f7fa/006064?text=Menu+2',
+                        image_url: '{{ asset('photo/obat.webp') }}',
                         start_time: '07.00 - 07.30',
                         end_time: '08.00 - 08.30'
                     },
@@ -231,7 +231,7 @@
                         nama: 'Prematur',
                         kategoris: ['Prematur'],
                         price: '350.000',
-                        image_url: 'https://placehold.co/300x200/e0f7fa/006064?text=Menu+2',
+                        image_url: '{{ asset('photo/susu.jpeg') }}',
                         start_time: '07.00 - 07.30',
                         end_time: '08.00 - 08.30'
                     }
