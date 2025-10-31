@@ -62,3 +62,19 @@ footer input[type="email"] { color: #333; }
   padding:4px 12px; border-bottom-left-radius:8px; border-bottom-right-radius:8px;
   box-shadow:0 2px 6px rgba(0,0,0,.15);
 }
+
+/* FRAME UTAMA 9:16 */
+:root {
+  --mobile-frame-width: min(100vw, 430px); /* width HP max */
+}
+
+/* Bikin semua konten seperti di dalam layar hp */
+.mobile-frame {
+  width: var(--mobile-frame-width);
+  /* hitung tinggi sesuai 9:16 */
+  height: calc(var(--mobile-frame-width) * 16 / 9);
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+
