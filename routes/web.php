@@ -27,4 +27,6 @@ Route::get('views/metodepayment', function () {
 Route::get('views/order', function () {
     return view('order');
 });
-
+Route::get('views/search', function () {
+    return view('search');
+});
