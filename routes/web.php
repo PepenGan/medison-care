@@ -28,6 +28,10 @@ Route::get('views/order', function () {
     return view('order');
 });
 
+Route::get('views/search', function () {
+    return view('search');
+});
+
 Route::get('views/beranda', function () {
     return view('beranda');
 }); 
