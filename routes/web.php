@@ -34,7 +34,7 @@ Route::delete('/products/{id}', [ProductController::class, 'destroy']);
 Route::get('/promo', [ProductController::class, 'promo'])->name('promo');
 
 
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('views/forgot', function () {
     return view('forgot');
