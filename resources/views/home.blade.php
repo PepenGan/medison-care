@@ -13,74 +13,62 @@
 <body class="antialiased aspect-9-16 "
   style="--frame: 520px;">
 
-  <header>
+<header class="w-full">
+  <div class="mx-auto w-full max-w-6xl px-4 py-3">
+    <div class="flex items-center gap-3">
+      <!-- Logo (tetap) -->
+      <div class="w-[100px] shrink-0">
+        <img src="photo/logo.png" alt="Logo" class="w-full h-auto">
+      </div>
 
-    <div class="w-[100px]">
-      <img src="photo/logo.png" alt="">
+      <!-- Search (tetap, tidak ikut membesar; hanya diposisikan rapi) -->
+      <div class="hidden md:flex flex-1 justify-center min-w-0">
+        <form
+          action="#"
+          method="GET"
+          class="flex items-center gap-2 bg-[#f9fafb] border border-gray-300 rounded-full px-4 py-1.5
+                 w-full max-w-[380px] shadow-sm focus-within:ring-2 focus-within:ring-gray-200
+                 transition-all duration-300"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round"
+            class="w-4 h-4 text-gray-500"
+          >
+            <circle cx="11" cy="11" r="7" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+
+          <input
+            type="text"
+            name="search"
+            placeholder="Search anything..."
+            class="flex-1 min-w-0 bg-transparent text-gray-700 placeholder-gray-400 text-[14px] focus:outline-none"
+          />
+
+          <button
+            type="submit"
+            class="px-3 py-1 text-sm font-medium text-gray-600 bg-white border border-gray-300 rounded-full hover:bg-gray-100 transition-colors duration-300"
+          >
+            Go
+          </button>
+        </form>
+      </div>
+
+      <!-- Right icons (tetap) -->
+      <div class="ml-auto flex items-center gap-3 shrink-0">
+        <a href="/views/order" class="block">
+          <img src="photo/keranjang.png" alt="Keranjang" class="w-[50px] h-auto">
+        </a>
+
+        <a href="profile" class="block w-[22px]">
+          <img src="photo/user.png" alt="User" class="w-full h-auto">
+        </a>
+      </div>
     </div>
+  </div>
+</header>
 
-<div class="mt-4 flex items-center gap-3">
-
-      <div class="flex justify-center mt-[-130px] ml-[130px]  ">
-         <form action="{{ route('logout') }}" method="POST">
-        @csrf
-        <button type="submit" class="text-red-500">
-            Logout
-        </button>
-    </form>
-
-  <form
-    action="#"
-    method="GET"
-    class="hidden md:flex items-center gap-2 bg-[#f9fafb] border border-gray-300 rounded-full px-4 py-1.5 w-full max-w-[380px] shadow-sm focus-within:ring-2 focus-within:ring-gray-200 transition-all duration-300"
-  >
-    <!-- Ikon Search -->
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="w-4 h-4 text-gray-500"
-    >
-      <circle cx="11" cy="11" r="7" />
-      <line x1="21" y1="21" x2="16.65" y2="16.65" />
-    </svg>
-
-    <!-- Input -->
-    <input
-      type="text"
-      name="search"
-      placeholder="Search anything..."
-      class="flex-1 bg-transparent text-gray-700 placeholder-gray-400 text-[14px] focus:outline-none"
-    />
-
-    <!-- Tombol -->
-    <button
-      type="submit"
-      class="px-3 py-1 text-sm font-medium text-gray-600 bg-white border border-gray-300 rounded-full hover:bg-gray-100 transition-colors duration-300"
-    >
-      Go
-    </button>
-  </form>
-</div>
-
-      <div class="mt-[-130px] ml-[-10px]">
-        <a href="/views/order">
-          <img src="photo/keranjang.png" alt="" class="w-[50px]">
-        </a>
-      </div>
-
-      <div class="w-[22px] mt-[-127px] ml-[-10px]">
-        <a href="">
-           <img src="photo/user.png" alt="">
-        </a>
-      </div>
-
-</div>
-  </header>
       <!-- 🖼️ Slider Container -->
       <div class="relative w-full overflow-hidden rounded-2xl shadow-2xl mt-[-10px]">
         <!-- Tips: jika nanti pakai slider JS, tambahkan width dinamis per slide -->
@@ -418,8 +406,8 @@
 
   </div>
 </section>
-<section>
-  <div class="fixed bottom-6 right-6 z-50">
+<section class="mt-[-20px]">
+  <div class="fixed bottom-20 right-5.5 z-50">
     <!-- Tombol Chat WhatsApp -->
     <button id="chatButton"
       class="bg-green-500 w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 hover:scale-110 transition-all duration-300">
