@@ -24,6 +24,15 @@ Route::middleware('auth')->group(function (){
 // Alur CRUD Product
 Route::get('/product', [ProductController::class, 'index'])->name('products');
 
+//alur untuk product
+
+Route::get('/products', [ProductController::class, 'index']);
+Route::post('/products', [ProductController::class, 'store']);
+Route::get('/products/{id}', [ProductController::class, 'show']);
+Route::put('/products/{id}', [ProductController::class, 'update']);
+Route::delete('/products/{id}', [ProductController::class, 'destroy']);
+Route::get('/promo', [ProductController::class, 'promo'])->name('promo');
+
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 

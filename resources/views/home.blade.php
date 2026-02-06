@@ -13,74 +13,62 @@
 <body class="antialiased aspect-9-16 "
   style="--frame: 520px;">
 
-  <header>
+<header class="w-full">
+  <div class="mx-auto w-full max-w-6xl px-4 py-3">
+    <div class="flex items-center gap-3">
+      <!-- Logo (tetap) -->
+      <div class="w-[100px] shrink-0">
+        <img src="photo/logo.png" alt="Logo" class="w-full h-auto">
+      </div>
 
-    <div class="w-[100px]">
-      <img src="photo/logo.png" alt="">
+      <!-- Search (tetap, tidak ikut membesar; hanya diposisikan rapi) -->
+      <div class="hidden md:flex flex-1 justify-center min-w-0">
+        <form
+          action="#"
+          method="GET"
+          class="flex items-center gap-2 bg-[#f9fafb] border border-gray-300 rounded-full px-4 py-1.5
+                 w-full max-w-[380px] shadow-sm focus-within:ring-2 focus-within:ring-gray-200
+                 transition-all duration-300"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round"
+            class="w-4 h-4 text-gray-500"
+          >
+            <circle cx="11" cy="11" r="7" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+
+          <input
+            type="text"
+            name="search"
+            placeholder="Search anything..."
+            class="flex-1 min-w-0 bg-transparent text-gray-700 placeholder-gray-400 text-[14px] focus:outline-none"
+          />
+
+          <button
+            type="submit"
+            class="px-3 py-1 text-sm font-medium text-gray-600 bg-white border border-gray-300 rounded-full hover:bg-gray-100 transition-colors duration-300"
+          >
+            Go
+          </button>
+        </form>
+      </div>
+
+      <!-- Right icons (tetap) -->
+      <div class="ml-auto flex items-center gap-3 shrink-0">
+        <a href="/views/order" class="block">
+          <img src="photo/keranjang.png" alt="Keranjang" class="w-[50px] h-auto">
+        </a>
+
+        <a href="profile" class="block w-[22px]">
+          <img src="photo/user.png" alt="User" class="w-full h-auto">
+        </a>
+      </div>
     </div>
+  </div>
+</header>
 
-<div class="mt-4 flex items-center gap-3">
-
-      <div class="flex justify-center mt-[-130px] ml-[130px]  ">
-         <form action="{{ route('logout') }}" method="POST">
-        @csrf
-        <button type="submit" class="text-red-500">
-            Logout
-        </button>
-    </form>
-
-  <form
-    action="#"
-    method="GET"
-    class="hidden md:flex items-center gap-2 bg-[#f9fafb] border border-gray-300 rounded-full px-4 py-1.5 w-full max-w-[380px] shadow-sm focus-within:ring-2 focus-within:ring-gray-200 transition-all duration-300"
-  >
-    <!-- Ikon Search -->
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="w-4 h-4 text-gray-500"
-    >
-      <circle cx="11" cy="11" r="7" />
-      <line x1="21" y1="21" x2="16.65" y2="16.65" />
-    </svg>
-
-    <!-- Input -->
-    <input
-      type="text"
-      name="search"
-      placeholder="Search anything..."
-      class="flex-1 bg-transparent text-gray-700 placeholder-gray-400 text-[14px] focus:outline-none"
-    />
-
-    <!-- Tombol -->
-    <button
-      type="submit"
-      class="px-3 py-1 text-sm font-medium text-gray-600 bg-white border border-gray-300 rounded-full hover:bg-gray-100 transition-colors duration-300"
-    >
-      Go
-    </button>
-  </form>
-</div>
-
-      <div class="mt-[-130px] ml-[-10px]">
-        <a href="/views/order">
-          <img src="photo/keranjang.png" alt="" class="w-[50px]">
-        </a>
-      </div>
-
-      <div class="w-[22px] mt-[-127px] ml-[-10px]">
-        <a href="">
-           <img src="photo/user.png" alt="">
-        </a>
-      </div>
-
-</div>
-  </header>
       <!-- 🖼️ Slider Container -->
       <div class="relative w-full overflow-hidden rounded-2xl shadow-2xl mt-[-10px]">
         <!-- Tips: jika nanti pakai slider JS, tambahkan width dinamis per slide -->
@@ -199,93 +187,61 @@
 <section class="mt-6 font-[inter]">
   <div class="flex items-center justify-between mb-3 px-3">
     <h2 class="text-[17px] font-semibold text-gray-800">Promo</h2>
-    <a href="#semua-promo" class="text-[13px] text-green-600 hover:underline font-medium">
+    <a href="{{ route('promo') }}" class="text-[13px] text-green-600 hover:underline font-medium">
       lihat semua &gt;
     </a>
   </div>
 
-  <!-- SCROLL LIST -->
   <div class="overflow-x-auto snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] px-2">
     <div class="flex gap-3 min-w-max [ &>* ]:snap-start pb-1">
 
-      <!-- CARD -->
-      <article class="relative w-40 bg-white rounded-xl border border-green-300 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-        <!-- Badge PROMO -->
-        <div class="absolute top-0 left-0 w-full flex justify-center pointer-events-none">
-          <span class="inline-block bg-[#C6A252] text-white text-[10px] font-semibold px-2 py-1 rounded-b-md shadow-sm uppercase tracking-wide">
-            Promo
-          </span>
-        </div>
+      @forelse(($promoProducts ?? collect()) as $product)
+        @php
+          $originalPrice = (float) $product->price;
+          $promoPrice = $originalPrice * 0.9; // diskon 10% (ubah kalau mau)
+          $unit = $product->unit ?? 'Pcs'; // migration kamu belum ada kolom unit, jadi fallback
+          $imageUrl = $product->image
+              ? (str_starts_with($product->image, 'http') ? $product->image : asset($product->image))
+              : asset('photo/obat.webp');
+        @endphp
 
-        <div class="p-2 pt-5">
-          <!-- Gambar -->
-          <div class="h-20 flex items-center justify-center mb-2">
-            <img src="/photo/obat.webp" alt="Tempra Anggur Sirup 60ml" class="max-h-16 object-contain">
+        <article class="relative w-40 bg-white rounded-xl border border-green-300 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+          <div class="absolute top-0 left-0 w-full flex justify-center pointer-events-none">
+            <span class="inline-block bg-[#C6A252] text-white text-[10px] font-semibold px-2 py-1 rounded-b-md shadow-sm uppercase tracking-wide">
+              Promo
+            </span>
           </div>
 
-          <!-- Judul -->
-          <h3 class="text-[11px] font-semibold text-gray-900 text-center leading-snug uppercase">
-            TEMPRA ANGGUR<br>SIRUP 60ML
-          </h3>
-
-          <!-- Harga -->
-          <div class="mt-1 text-center">
-            <div class="text-[10px] text-red-500 line-through">Rp 54.021</div>
-            <div class="text-[12px] text-green-600 font-extrabold">
-              Rp 49.699,- <span class="text-gray-600 font-medium text-[10px]">/ Botol</span>
+          <div class="p-2 pt-5">
+            <div class="h-20 flex items-center justify-center mb-2">
+              <img src="{{ $imageUrl }}" alt="{{ $product->product_name }}" class="max-h-16 object-contain">
             </div>
-            <div class="text-[10px] text-gray-500 mt-[2px]">13.4 RB+ Terjual</div>
-          </div>
-        </div>
-      </article>
 
-      <!-- CARD 2 -->
-      <article class="relative w-40 bg-white rounded-xl border border-green-300 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-        <div class="absolute top-0 left-0 w-full flex justify-center pointer-events-none">
-          <span class="inline-block bg-[#C6A252] text-white text-[10px] font-semibold px-2 py-1 rounded-b-md shadow-sm uppercase tracking-wide">
-            Promo
-          </span>
-        </div>
-        <div class="p-2 pt-5">
-          <div class="h-20 flex items-center justify-center mb-2">
-            <img src="/photo/obat.webp" alt="Lacto B Sachet" class="max-h-16 object-contain">
-          </div>
-          <h3 class="text-[11px] font-semibold text-gray-900 text-center leading-snug uppercase">
-            LACTO B SACHET
-          </h3>
-          <div class="mt-1 text-center">
-            <div class="text-[10px] text-red-500 line-through">Rp 10.450</div>
-            <div class="text-[12px] text-green-600 font-extrabold">
-              Rp 9.935,- <span class="text-gray-600 font-medium text-[10px]">/ Pcs</span>
-            </div>
-            <div class="text-[10px] text-gray-500 mt-[2px]">73.2 RB+ Terjual</div>
-          </div>
-        </div>
-      </article>
+            <h3 class="text-[11px] font-semibold text-gray-900 text-center leading-snug uppercase">
+              {{ $product->product_name }}
+            </h3>
 
-      <!-- CARD 3 -->
-      <article class="relative w-40 bg-white rounded-xl border border-green-300 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-        <div class="absolute top-0 left-0 w-full flex justify-center pointer-events-none">
-          <span class="inline-block bg-[#C6A252] text-white text-[10px] font-semibold px-2 py-1 rounded-b-md shadow-sm uppercase tracking-wide">
-            Promo
-          </span>
-        </div>
-        <div class="p-2 pt-5">
-          <div class="h-20 flex items-center justify-center mb-2">
-            <img src="/photo/obat.webp" alt="Tolak Angin Cair Plus Madu 15ml" class="max-h-16 object-contain">
-          </div>
-          <h3 class="text-[11px] font-semibold text-gray-900 text-center leading-snug uppercase">
-            TOLAK ANGIN<br>PLUS MADU 15ML
-          </h3>
-          <div class="mt-1 text-center">
-            <div class="text-[10px] text-red-500 line-through">Rp 55.592</div>
-            <div class="text-[12px] text-green-600 font-extrabold">
-              Rp 52.811,- <span class="text-gray-600 font-medium text-[10px]">/ Dos</span>
+            <div class="mt-1 text-center">
+              <div class="text-[10px] text-red-500 line-through">
+                Rp {{ number_format($originalPrice, 0, ',', '.') }}
+              </div>
+
+              <div class="text-[12px] text-green-600 font-extrabold">
+                Rp {{ number_format($promoPrice, 0, ',', '.') }},-
+                <span class="text-gray-600 font-medium text-[10px]">/ {{ $unit }}</span>
+              </div>
+
+              <div class="text-[10px] text-gray-500 mt-[2px]">
+                {{ $product->sold_text ?? 'Terjual' }}
+              </div>
             </div>
-            <div class="text-[10px] text-gray-500 mt-[2px]">10 RB+ Terjual</div>
           </div>
+        </article>
+      @empty
+        <div class="px-3 text-[12px] text-gray-500">
+          Belum ada produk promo.
         </div>
-      </article>
+      @endforelse
 
     </div>
   </div>
@@ -418,8 +374,8 @@
 
   </div>
 </section>
-<section>
-  <div class="fixed bottom-6 right-6 z-50">
+<section class="mt-[-20px]">
+  <div class="fixed bottom-20 right-5.5 z-50">
     <!-- Tombol Chat WhatsApp -->
     <button id="chatButton"
       class="bg-green-500 w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 hover:scale-110 transition-all duration-300">
